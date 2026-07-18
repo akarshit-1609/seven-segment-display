@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+    <style>
+        body {
+          background-color: #000000;
+        }
+        #container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 10px;
+            margin: 100px auto;
+            transform: scale(0.5);
+        }
+        .text{
+            color: yellow;
+            font-size: 80px;
+            font-weight: bold;
+            text-align: center;
+            user-select: none;
+        }
+        .hypen{
+            width: 40px;
+        }
+        #clock{
+            width:180px;
+            margin-left: 20px;
+            font-size: 100px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="hours"></div>
+        <div class=" text hypen">&colon;</div>
+        <div id="minutes"></div>
+        <div class=" text hypen">&colon;</div>
+        <div id="seconds"></div>
+        <div class=" text" id="clock"></div>
+    </div>
+
+    <script src="https://akarshit-1609.github.io/seven-segment-display/script.js"></script>
+    <script>
+        const data = {
+            digits:2,
+            size:10,
+            onColour: "yellow",
+            offColour: "grey",
+            offOpacity: 0.1,
+            allActive: true
+        };
+        const hoursDiv = new Seven_segment_display("hours", data);
+        const minutesDiv = new Seven_segment_display("minutes", data);
+        const secondsDiv = new Seven_segment_display("seconds", data);
+        time = () => {
+            d = new Date();
+            hours = d.getHours();
+            if (hours>=12) {
+                hours = hours - 12;
+                document.getElementById("clock").innerHTML = "PM";
+            } else {
+                document.getElementById("clock").innerHTML = "AM";
+            }
+            hoursDiv.write(hours);
+            minutesDiv.write(d.getMinutes());
+            secondsDiv.write(d.getSeconds());
+        }
+        setInterval(time, 500);
+    </script>
+</body>
+
+</html>
