@@ -154,4 +154,4 @@ This project is licensed under the **GNU Lesser General Public License Version 3
 
 You are free to use, modify, and distribute this library, even in proprietary or commercial projects, provided that you comply with the terms of the LGPLv3. Any modifications to this library itself must be released under the same license.
 
-For the full license text, please see the [LICENSE](LICENSE) file in this repository or visit the [official GNU website](https://www.gnu.org/licenses/lgpl-3.0.html).
+For the full license text, please see the [LICENSE](COPYING.LESSER) file in this repository or visit the [official GNU website](https://www.gnu.org/licenses/lgpl-3.0.html).
